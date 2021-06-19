@@ -1,0 +1,23 @@
+export const txtShowMethods = {
+  simpleUrl: "http://localhost:5000/login/smplie",
+  simpleText: "در خواست 'post' ساده برای ثبت نام",
+  simpleMethod: "post",
+  proUrl: "http://localhost:5000/login/pro",
+  proText: "در خواست 'post' ثبت نام . گرفتن توکن و ذخیره توکن ",
+  proMethod: "post",
+  get: "get",
+  listUrlParams: "http://localhost:5000/list",
+  listUrlId: "http://localhost:5000/list/:page",
+  listHttpId: "http://localhost:5000/list/1",
+  listTextParams: "در خواست 'get' گرفتن یک لیست همراه با صفحه بندی",
+  listNew: "در خواست 'post' برای ایجاد یک آیتم جدید",
+  listUrl: "http://localhost:5000/list",
+  listUpdate: "در خواست 'post' برای ویرایش آیتم",
+  listUpdatePut: "در خواست 'put' برای ویرایش آیتم",
+  put: "put",
+  delete: "delete",
+  listDeleteUrl: "http://localhost:5000/list",
+  listDelete: "در خواست 'delete' برای حذف آیتم",
+  listDeleteUrlId: "http://localhost:5000/list/:id",
+  listHttpDeleteId : "http://localhost:5000/list/1"
+};
