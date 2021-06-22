@@ -23,6 +23,34 @@ const Base = css`
   max-width: ${WIDTH};
   width: 100%;
 `;
+export const Ul = styled.ul`
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  li{
+    list-style: none;
+    margin-left: 10px;
+    &:last-child{
+      margin-left: 10px;
+    }
+    a{
+      color: ${dark};
+      font-size: ${font16};
+      text-decoration: none;
+      font-weight: normal;
+      transition: all 0.5ms;
+      padding: 5px 20px;
+      border-radius: 20px;
+      &:hover{
+        color: ${colorRes};
+        font-weight: 500;
+        transition: all 0.5ms;
+      }
+    }
+  }
+`;
 export const Div = styled.div`
   display: flex;
   flex-direction: ${(props) => props.dir || "row"};
@@ -110,14 +138,14 @@ export const Copy = styled(P)`
   padding: 10px 20px;
   border-radius: 100px;
   direction: ltr;
-  align-self:${props => props.self || "center" } ;
+  align-self: ${(props) => props.self || "center"};
   cursor: pointer;
-  margin: ${props => props.m || null};
+  margin: ${(props) => props.m || null};
 `;
 Copy.propTypes = {
-  m : PropTypes.string,
-  self : PropTypes.string
-}
+  m: PropTypes.string,
+  self: PropTypes.string,
+};
 export const Http = styled.span`
   display: inline-block;
   margin: 0 2px;
@@ -156,6 +184,6 @@ export const Text = styled.span`
   color: ${(props) => props.color || dark};
   font-size: ${font16};
 `;
-Text.propTypes ={
-  color : PropTypes.string
-}
+Text.propTypes = {
+  color: PropTypes.string,
+};
