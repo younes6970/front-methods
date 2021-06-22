@@ -110,12 +110,13 @@ export const Copy = styled(P)`
   padding: 10px 20px;
   border-radius: 100px;
   direction: ltr;
-  align-self: center;
+  align-self:${props => props.self || "center" } ;
   cursor: pointer;
   margin: ${props => props.m || null};
 `;
 Copy.propTypes = {
-  m : PropTypes.string
+  m : PropTypes.string,
+  self : PropTypes.string
 }
 export const Http = styled.span`
   display: inline-block;
