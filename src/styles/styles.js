@@ -78,17 +78,19 @@ SVG.propTypes = {
   w: PropTypes.number.isRequired,
   h: PropTypes.number.isRequired,
 };
+
 export const P = styled.p`
   ${(props) => props.w && `width :  ${props.w}`};
   font-size: ${(props) => props.font || font18};
   color: ${(props) => props.color || dark};
-  background: none;
+  background-color: ${props => props.bg || null } ;
   margin: ${(props) => props.m || 0};
   padding: ${(props) => props.p || 0};
   ${(props) => props.self && `align-self : ${props.self}`};
   box-sizing: border-box;
   ${(props) => props.span && `display: inline-block`};
   text-align: justify;
+  border-radius:${props => `${props.radius}px` || null} ;
 `;
 P.proptypes = {
   w: PropTypes.string,
@@ -98,6 +100,8 @@ P.proptypes = {
   p: PropTypes.string,
   self: PropTypes.string,
   span: PropTypes.bool,
+  bg : PropTypes.string,
+  radius : PropTypes.number
 };
 export const Copy = styled(P)`
   background-color: ${colorCopy};

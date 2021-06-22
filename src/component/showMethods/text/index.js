@@ -19,5 +19,6 @@ export const txtShowMethods = {
   listDeleteUrl: "http://localhost:5000/list",
   listDelete: "در خواست 'delete' برای حذف آیتم",
   listDeleteUrlId: "http://localhost:5000/list/:id",
-  listHttpDeleteId : "http://localhost:5000/list/1"
+  listHttpDeleteId : "http://localhost:5000/list/1",
+  token : "برای در خواست های زیر نیاز به توکن هست. برای گرفتن توکن با http://localhost:5000/login/pro ثبت نام کرده و توکن خود را ذخیره کنید."
 };
