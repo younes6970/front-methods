@@ -34,6 +34,7 @@ export const Div = styled.div`
   ${(props) => props.m && `margin : ${props.m}`};
   ${(props) => props.p && `padding : ${props.p}`};
   box-sizing: border-box;
+  ${(props) => props.ltr && "  direction: ltr"};
 `;
 Div.propTypes = {
   dir: PropTypes.string,
@@ -44,6 +45,7 @@ Div.propTypes = {
   base: PropTypes.bool,
   m: PropTypes.string,
   p: PropTypes.string,
+  ltr: PropTypes.string,
 };
 export const Box = styled(Div)`
   border: ${BORDER};
@@ -53,11 +55,11 @@ export const Box = styled(Div)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: ${props => props.h}px;
+  height: ${(props) => props.h}px;
 `;
 Box.propTypes = {
-  h : PropTypes.number.isRequired
-}
+  h: PropTypes.number.isRequired,
+};
 export const H = styled.h1`
   font-size: ${(props) => props.font || `${font20}`};
   color: ${(props) => props.color || `${dark}`};
@@ -83,14 +85,14 @@ export const P = styled.p`
   ${(props) => props.w && `width :  ${props.w}`};
   font-size: ${(props) => props.font || font18};
   color: ${(props) => props.color || dark};
-  background-color: ${props => props.bg || null } ;
+  background-color: ${(props) => props.bg || null};
   margin: ${(props) => props.m || 0};
   padding: ${(props) => props.p || 0};
   ${(props) => props.self && `align-self : ${props.self}`};
   box-sizing: border-box;
   ${(props) => props.span && `display: inline-block`};
   text-align: justify;
-  border-radius:${props => `${props.radius}px` || null} ;
+  border-radius: ${(props) => `${props.radius}px` || null};
 `;
 P.proptypes = {
   w: PropTypes.string,
@@ -100,8 +102,8 @@ P.proptypes = {
   p: PropTypes.string,
   self: PropTypes.string,
   span: PropTypes.bool,
-  bg : PropTypes.string,
-  radius : PropTypes.number
+  bg: PropTypes.string,
+  radius: PropTypes.number,
 };
 export const Copy = styled(P)`
   background-color: ${colorCopy};
@@ -110,7 +112,11 @@ export const Copy = styled(P)`
   direction: ltr;
   align-self: center;
   cursor: pointer;
+  margin: ${props => props.m || null};
 `;
+Copy.propTypes = {
+  m : PropTypes.string
+}
 export const Http = styled.span`
   display: inline-block;
   margin: 0 2px;
@@ -128,7 +134,7 @@ export const Code = styled.span`
   font-size: ${font16};
   margin: ${(props) => (props.m ? "3px 0" : "3px 2px")};
   display: inline-block;
-  ${props => props.p && `padding: 0 0 0 20px`};
+  ${(props) => props.p && `padding: 0 0 0 20px`};
 `;
 export const Orange = styled(Code)`
   color: #edb365;
@@ -145,3 +151,10 @@ export const Purple = styled(Code)`
 export const Blue = styled(Code)`
   color: #6897bb;
 `;
+export const Text = styled.span`
+  color: ${(props) => props.color || dark};
+  font-size: ${font16};
+`;
+Text.propTypes ={
+  color : PropTypes.string
+}
