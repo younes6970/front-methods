@@ -27,7 +27,6 @@ const ShowMethods = () => {
         <P bg={`${colorDark}44`} p={"5px 20px"} m={"10px auto 30px"} radius={100}>
             {txtShowMethods.token}
         </P>
-
         <Div
         w={"100%"}
         dir={"row"}

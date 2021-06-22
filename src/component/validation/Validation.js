@@ -1,12 +1,15 @@
-import { Copy, Div, Http } from "../../styles/styles";
+import {Copy, Div, Http, P} from "../../styles/styles";
 import { font16 } from "../../styles/color/js/font";
 import { text } from "../../confing/text";
 import Filed from "./component/filed/Filed";
 import Valid from "./component/valid/Valid";
 import styles from "./styles/validation.module.scss";
+import {colorDark} from "../../styles/color/js/color";
+import {txtValidation} from "./text";
 const Validation = () => {
   return (
     <Div base m={"40px 0 30px"} dir={"column"}>
+      <P bg={`${colorDark}44`} p={"5px 20px"} m={"0 auto 35px"} radius={100}>{txtValidation.textValidation}</P>
       <Div w={"100%"} m={"10px 0"} content={"space-evenly"} item={"center"}>
         <Div
           dir={"column"}

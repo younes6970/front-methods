@@ -3,5 +3,6 @@ export const txtDescription = {
     get : "get",
     post : "post",
     delete : "delete",
-    put : "put"
+    put : "put",
+    validate :"validation"
 }
