@@ -1,4 +1,5 @@
 export const light = "#fff"
+export const black = "#000"
 export const textLight = "#a1b5c1"
 export const dark = "#68747d"
 export const baseDark = "#1e1e1e"

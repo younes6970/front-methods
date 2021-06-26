@@ -20,7 +20,6 @@ const Description = () => {
             txtDescription.validate
           ) : (
             <>
-              {" "}
               {txtDescription.get}
               <P as={"span"} span m={"0 4px"} color={colorReq}>
                 ,
