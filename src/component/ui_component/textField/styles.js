@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import { BORDER, RADIUS } from "../../../styles/color/js/styles";
+import { BORDER, RADIUS, SHADOW } from "../../../styles/color/js/styles";
 import { black, dark } from "../../../styles/color/js/color";
-import { font16, font18 } from "../../../styles/color/js/font";
+import { font16 } from "../../../styles/color/js/font";
 
 export const Input = styled.input`
   font-size: ${font16};
@@ -38,8 +38,10 @@ export const DivField = styled.div`
   width: 100%;
   height: 100%;
   padding: 10px;
-  border-bottom: ${BORDER};
-  margin-bottom: 15px;
+  border-bottom: ${BORDER}66;
+  margin-bottom: 35px;
+  position: relative;
+  box-shadow: 0 4px 4px -4px #a1b5c1;
 `;
 export const Center = styled.div`
   display: flex;
@@ -48,4 +50,6 @@ export const Center = styled.div`
   justify-content: flex-start;
   padding: 20px;
   width: 540px;
+  box-shadow: ${SHADOW};
+  border-radius: ${RADIUS};
 `;

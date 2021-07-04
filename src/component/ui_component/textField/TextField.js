@@ -29,10 +29,10 @@ const TextField = (props) => {
           disabled={disabled}
           id={name}
         />
-        {error && touched && (
-          <div className={styles.error_message}>{error}</div>
-        )}
       </BoxInput>
+      {error && touched && (
+          <div className={styles.error_message}>{error}</div>
+      )}
     </DivField>
   );
 };

@@ -32,7 +32,6 @@
 }
 .error_message {
   position: absolute;
-  margin-right: 10px;
   -webkit-animation: fadein 0.8s; /* Safari, Chrome and Opera > 12.1 */
   -moz-animation: fadein 0.8s; /* Firefox < 16 */
   -ms-animation: fadein 0.8s; /* Internet Explorer */
@@ -44,7 +43,8 @@
   color: rgba(#d73167, 1);
   padding-right: 8px;
   margin-top: 4px;
-  bottom: 0;
+  bottom: -28px;
+  right: 0;
 }
 @keyframes fadein {
   from {

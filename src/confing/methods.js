@@ -1,4 +1,3 @@
-
 class Methods {
   convertArabicToLatin = (input) => {
     if (input == undefined) return;
@@ -123,12 +122,22 @@ class Methods {
     return value;
   };
 
-
   isString = (x) => {
     return Object.prototype.toString.call(x) === "[object String]";
   };
   isObject = (obj) => {
     return obj === Object(obj);
+  };
+  isEnglish = (value) => {
+    const onlyEnglish = new RegExp("^\\s*([0-9a-zA-Z]*)\\s*$");
+    const isValue = onlyEnglish.test(value);
+    return isValue;
+  };
+  isPassword = (value) => {
+    const pass = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,30}$/;
+    const isPass = pass.test(value);
+
+    return isPass;
   };
 }
 export default new Methods();
