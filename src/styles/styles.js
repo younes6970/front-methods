@@ -63,6 +63,8 @@ export const Div = styled.div`
   ${(props) => props.p && `padding : ${props.p}`};
   box-sizing: border-box;
   ${(props) => props.ltr && "  direction: ltr"};
+  ${(props) => props.h && `height : ${props.h}`};
+  
 `;
 Div.propTypes = {
   dir: PropTypes.string,
@@ -74,6 +76,7 @@ Div.propTypes = {
   m: PropTypes.string,
   p: PropTypes.string,
   ltr: PropTypes.string,
+  h:PropTypes.string
 };
 export const Box = styled(Div)`
   border: ${BORDER};
