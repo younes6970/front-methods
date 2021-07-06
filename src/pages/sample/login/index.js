@@ -8,7 +8,7 @@ const Login = dynamic(
 );
 
 const PageLogin = () => {
-  const [isLoading] = useRedirect("/sample/lists" , true);
+  const [isLoading] = useRedirect("/sample/lists?page=1" , true);
 
   return <> {isLoading ? <Loading /> : <Login />}</>;
 };

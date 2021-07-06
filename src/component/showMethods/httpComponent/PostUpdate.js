@@ -8,6 +8,7 @@ const PostUpdate = () =>{
         des={txtShowMethods.listUpdate}
         method={txtShowMethods.proMethod}
         h={635}
+        isValidation
     >
         <Purple m>body</Purple>
         <Withe m>:</Withe> <Purple m>JSON</Purple>

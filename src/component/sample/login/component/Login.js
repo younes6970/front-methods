@@ -1,6 +1,5 @@
 import LoginFormik from "./LoginForm";
 import { requestPostLogin } from "../../request";
-import { toast } from "react-toastify";
 import { useRouter } from "next/router";
 
 const Login = () => {

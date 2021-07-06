@@ -10,6 +10,7 @@ import DeleteParams from "./httpComponent/DeleteParams";
 import DeleteId from "./httpComponent/DeleteId";
 import {colorDark} from "../../styles/color/js/color";
 import {txtShowMethods} from "./text";
+import {RADIUS} from "../../styles/color/js/styles";
 
 const ShowMethods = () => {
   return (
@@ -24,7 +25,7 @@ const ShowMethods = () => {
         <PostSimple />
         <PostPro />
       </Div>
-        <P bg={`${colorDark}44`} p={"5px 20px"} m={"10px auto 30px"} radius={100}>
+        <P bg={`${colorDark}44`} p={"5px 20px"} m={"10px auto 30px"} radius={RADIUS}>
             {txtShowMethods.token}
         </P>
         <Div

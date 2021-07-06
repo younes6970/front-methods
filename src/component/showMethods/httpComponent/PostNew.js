@@ -9,6 +9,7 @@ const PostNew = () => {
       des={txtShowMethods.listNew}
       method={txtShowMethods.proMethod}
       full
+      isValidation
       h={610}
     >
       <Purple m>body</Purple>

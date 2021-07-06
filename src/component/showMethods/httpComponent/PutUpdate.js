@@ -8,6 +8,7 @@ const PutUpdate = () =>{
         des={txtShowMethods.listUpdatePut}
         method={txtShowMethods.put}
         h={635}
+        isValidation
     >
         <Purple m>body</Purple>
         <Withe m>:</Withe> <Purple m>JSON</Purple>

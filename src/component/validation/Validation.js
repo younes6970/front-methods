@@ -6,10 +6,11 @@ import Valid from "./component/valid/Valid";
 import styles from "./styles/validation.module.scss";
 import {colorDark} from "../../styles/color/js/color";
 import {txtValidation} from "./text";
+import {RADIUS} from "../../styles/color/js/styles";
 const Validation = () => {
   return (
     <Div base m={"40px 0 30px"} dir={"column"}>
-      <P bg={`${colorDark}44`} p={"5px 20px"} m={"0 auto 35px"} radius={100}>{txtValidation.textValidation}</P>
+      <P bg={`${colorDark}44`} p={"5px 20px"} m={"0 auto 35px"} radius={RADIUS}>{txtValidation.textValidation}</P>
       <Div w={"100%"} m={"10px 0"} content={"space-evenly"} item={"center"}>
         <Div
           dir={"column"}
@@ -42,15 +43,15 @@ const Validation = () => {
           <Copy m={"0 0 10px"} font={font16}>
             <Http>{text.post}</Http>:<Http>{text.postPro}</Http>
           </Copy>
-          <Div ltr m={"10px"}>
+          <Div ltr m={"10px 0 10px"}>
             <Filed item={"username"} />
             <Valid
-              value={"not.isEmpty.isLength({ min: 4, max: 14 }).isEnglish."}
+              value={"isLength({min:4,max:14}).isEnglish."}
             />
           </Div>
-          <Div ltr m={"10px"}>
+          <Div ltr m={"10px 0 10px"}>
             <Filed item={"password"} />
-            <Valid value={"not.isEmpty.have(string + number)."} />
+            <Valid value={"isLength({min:8,max:30}).isEnglish+string(Aa)+number."} />
           </Div>
         </Div>
       </Div>
@@ -69,23 +70,23 @@ const Validation = () => {
           <Div ltr m={"10px"}>
             <Filed item={"username"} />
             <Valid
-              value={"not.isEmpty.isLength({ min: 4, max: 14 }).isEnglish."}
+              value={"isLength({min:4,max:14}).isEnglish."}
             />
           </Div>
           <Div ltr m={"10px"}>
             <Filed item={"name"} />
-            <Valid value={"not.isEmpty.isLength({ max: 30 })."} />
+            <Valid value={"isLength({max:30})."} />
           </Div>
           <Div ltr m={"10px"}>
             <Filed item={"code"} />
             <Valid
-              value={"not.isEmpty.isNumeric.isLength({ min: 4, max: 4 })."}
+              value={"isNumeric.isLength({min:4,max:4})."}
             />
           </Div>
           <Div ltr m={"10px"}>
             <Filed item={"age"} />
             <Valid
-              value={"not.isEmpty.isNumeric.isLength({ min: 2, max: 3 })."}
+              value={"isNumeric.isLength({min:2,max:3})."}
             />
           </Div>
         </Div>
@@ -103,23 +104,23 @@ const Validation = () => {
           <Div ltr m={"10px"}>
             <Filed item={"username"} />
             <Valid
-              value={"not.isEmpty.isLength({ min: 4, max: 14 }).isEnglish."}
+              value={"isLength({min:4,max:14}).isEnglish."}
             />
           </Div>
           <Div ltr m={"10px"}>
             <Filed item={"name"} />
-            <Valid value={"not.isEmpty.isLength({ max: 30 })."} />
+            <Valid value={"isLength({max:30})."} />
           </Div>
           <Div ltr m={"10px"}>
             <Filed item={"code"} />
             <Valid
-              value={"not.isEmpty.isNumeric.isLength({ min: 4, max: 4 })."}
+              value={"isNumeric.isLength({min:4,max:4})."}
             />
           </Div>
           <Div ltr m={"10px"}>
             <Filed item={"age"} />
             <Valid
-              value={"not.isEmpty.isNumeric.isLength({ min: 2, max: 3 })."}
+              value={"isNumeric.isLength({min:2,max:3})."}
             />
           </Div>
         </Div>

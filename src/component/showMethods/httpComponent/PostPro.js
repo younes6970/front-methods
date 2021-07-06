@@ -8,6 +8,7 @@ const PostPro = () =>{
         des={txtShowMethods.proText}
         method={txtShowMethods.proMethod}
         post
+        isValidation
         h={510}
     >
         <Purple m>body</Purple>

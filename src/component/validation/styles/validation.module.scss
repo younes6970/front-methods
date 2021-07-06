@@ -1,6 +1,13 @@
 @import "src/styles/color/scss/scss";
 
-.boxBorder{
+.boxBorder {
   border: $BORDER;
   border-radius: $RADIUS;
+}
+.boxVali {
+  color: $colorReq;
+  border: $BORDER_LINK;
+  border-radius: $RADIUS;
+  padding: 7px 12px;
+  display: inline-block;
 }

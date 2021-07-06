@@ -9,6 +9,7 @@ const PostSimple = () => {
       des={txtShowMethods.simpleText}
       method={txtShowMethods.simpleMethod}
       post
+      isValidation
       h={510}
     >
       <Purple m>body</Purple>

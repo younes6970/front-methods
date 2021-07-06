@@ -4,4 +4,9 @@ export const dataHeaders = [
     title: "اعتبار سنجی",
     id: 10,
   },
+  {
+    link: "/sample/login?page=1",
+    title: "مثال",
+    id: 20,
+  }
 ];

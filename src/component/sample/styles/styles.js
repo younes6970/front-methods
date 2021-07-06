@@ -1,12 +1,13 @@
 import styled, { css } from "styled-components";
 import { font16 } from "../../../styles/color/js/font";
 import {
-  baseDark,
+  baseDark, colorReq,
   colorRes,
   dark,
   light,
 } from "../../../styles/color/js/color";
 import { BORDER, RADIUS, SHADOW } from "../../../styles/color/js/styles";
+import { elementType } from "prop-types";
 
 export const Btn = styled.button`
   padding: 13px 30px;
@@ -60,4 +61,29 @@ export const Button = styled.button`
   height: 25px;
   cursor: pointer;
   margin: 0 5px;
+`;
+export const Page = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row-reverse;
+`;
+const active = css`
+background-color: ${colorReq};
+  color: ${light};
+  box-shadow: none;
+  border: none;
+`
+export const ItemPage = styled.button`
+  padding: 7px 10px;
+  margin: 0 5px;
+  font-size: ${font16};
+  background: none;
+  outline: none;
+  cursor: pointer;
+  border: ${BORDER};
+  border-radius: ${RADIUS};
+  box-sizing: border-box;
+  ${props => props.active && active};
+  
 `;

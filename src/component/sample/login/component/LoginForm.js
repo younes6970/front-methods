@@ -25,7 +25,7 @@ const LoginForm = ({
           onChange={(e) => handleInput(e, "username", values, setValues)}
           maxLength={15}
           type={"text"}
-          placeholder={"نام کاریری خود را وارد کنید..."}
+          placeholder={"نام کاربری خود را وارد کنید..."}
           value={values.username}
           error={errors.username}
           touched={touched.username}
@@ -58,17 +58,17 @@ const LoginFormik = withFormik({
   },
   validationSchema: Yup.object().shape({
     username: Yup.string()
-      .required("تام کاربری الزامی است.")
-      .min(4, "کمتر از 4 کارکتر نباشد.")
-      .test("username", "از خروف انگلیسی استفاده شود.", (value) => {
+      .required("نام کاربری الزامی است.")
+      .min(4, "کمتر از ٤ کارکتر نباشد.")
+      .test("username", "از حروف انگلیسی استفاده شود.", (value) => {
         if (methods.isEnglish(value)) return true;
         return false;
       }),
     password: Yup.string()
-      .required("تام کلمه عبور الزامی است.")
+      .required("کلمه عبور الزامی است.")
       .test(
         "password",
-        "کمتر از 8 کارکتر و از خروف کوجیک بزرگ اعذاد انگلیسی استفاده شود.",
+        "کمتر از ٨ کارکتر و از حروف کوجیک بزرگ اعداد انگلیسی استفاده شود.",
         (value) => {
           if (methods.isPassword(value)) return true;
           return false;

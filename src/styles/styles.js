@@ -41,7 +41,7 @@ export const Ul = styled.ul`
       text-decoration: none;
       font-weight: normal;
       transition: all 0.5ms;
-      padding: 5px 20px;
+      padding: 5px 0 5px 10px;
       border-radius: 20px;
       &:hover{
         color: ${colorRes};
@@ -63,8 +63,7 @@ export const Div = styled.div`
   ${(props) => props.p && `padding : ${props.p}`};
   box-sizing: border-box;
   ${(props) => props.ltr && "  direction: ltr"};
-  ${(props) => props.h && `height : ${props.h}`};
-  
+  ${(props) => props.h && `max-height : ${props.h}`};
 `;
 Div.propTypes = {
   dir: PropTypes.string,
@@ -123,7 +122,7 @@ export const P = styled.p`
   box-sizing: border-box;
   ${(props) => props.span && `display: inline-block`};
   text-align: justify;
-  border-radius: ${(props) => `${props.radius}px` || null};
+  border-radius: ${(props) => `${props.radius}` || null};
 `;
 P.proptypes = {
   w: PropTypes.string,
@@ -139,7 +138,7 @@ P.proptypes = {
 export const Copy = styled(P)`
   background-color: ${colorCopy};
   padding: 10px 20px;
-  border-radius: 100px;
+  border-radius: ${RADIUS};
   direction: ltr;
   align-self: ${(props) => props.self || "center"};
   cursor: pointer;

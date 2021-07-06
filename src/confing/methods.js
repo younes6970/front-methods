@@ -139,5 +139,13 @@ class Methods {
 
     return isPass;
   };
+  coverTypeof = (value) => {
+    if (value === "undefined") return undefined;
+    if (value === "null" || value === null) return null;
+    if (value === "true") return true;
+    if (value === "false") return false;
+    const number = Number(value);
+    return isNaN(number) ? value : number;
+  };
 }
 export default new Methods();

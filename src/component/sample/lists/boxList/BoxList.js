@@ -19,7 +19,7 @@ const BoxList = (props) => {
         {lists.map((list) => {
           return (
             <Tr>
-              <Th as="td">{glist.username}</Th>
+              <Th as="td">{list.username}</Th>
               <Th as="td">{methods.convertToPersian(list.name)}</Th>
               <Th as="td">{methods.convertToPersian(list.age)}</Th>
               <Th as="td">{methods.convertToPersian(list.code)}</Th>
