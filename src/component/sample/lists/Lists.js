@@ -6,6 +6,7 @@ import { Div } from "../../../styles/styles";
 import methods from "../../../confing/methods";
 import { useRouter } from "next/router";
 import { ItemPage, Page } from "../styles/styles";
+import {toast} from "react-toastify";
 
 const Lists = () => {
   const {
@@ -33,14 +34,25 @@ const Lists = () => {
   const handleQuery = () => {
     !!!methods.coverTypeof(page) && push(`?page=${1}`);
   };
+  const handleDelete = (id) => {
+    const idx = lists.findIndex((list) => +list.id === +id);
+    const newValue = [...lists];
+    newValue.splice(idx, 1);
+    setLists(newValue);
+    toast.success("با موفقیت پاک شد")
+  };
   useEffect(() => {
     handleQuery();
     getLists(page);
   }, []);
   return (
     <Div base dir={"column"} content={"center"} item={"center"}>
-      <Div h={"510px"} w={"100%"} m={"30px 0"}>
-        {isLoad ? <Loading /> : <BoxList lists={lists} />}
+      <Div h={"585px"} w={"100%"} m={"30px 0"}>
+        {isLoad ? (
+          <Loading />
+        ) : (
+          <BoxList lists={lists} onDelete={handleDelete} />
+        )}
       </Div>
       <Page>
         <ItemPage active={+page === 1} onClick={() => handlePage(1)}>

@@ -16,6 +16,9 @@ export const Input = styled.input`
   margin: 0 10px;
   box-sizing: border-box;
   flex: 1;
+  appearance: none;
+  -moz-appearance: textfield;
+  -webkit-appearance: none;
   &::placeholder {
     color: ${black};
   }

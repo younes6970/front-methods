@@ -13,3 +13,14 @@ export const requestGetLists = (params) => {
   const getLists = new Request(getUrl.lists());
   return getLists.get(params).then((res) => res.data);
 };
+export const requestGetUser = (id) =>{
+  const params = {
+    id
+  }
+  const getUser = new Request(getUrl.user())
+  return getUser.get(params).then(res => res.data)
+}
+export const requestPostUser = (data) =>{
+  const postUser = new Request(postUrl.user())
+  return postUser.post(data).then(res=> res.data)
+}

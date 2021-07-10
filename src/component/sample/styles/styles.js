@@ -1,7 +1,8 @@
 import styled, { css } from "styled-components";
 import { font16 } from "../../../styles/color/js/font";
 import {
-  baseDark, colorReq,
+  baseDark,
+  colorReq,
   colorRes,
   dark,
   light,
@@ -13,14 +14,14 @@ export const Btn = styled.button`
   padding: 13px 30px;
   font-size: ${font16};
   color: ${light};
-  background-color: ${colorRes};
+  background-color: ${(props) => props.bg || colorRes};
   text-align: center;
   border-radius: ${RADIUS};
   outline: none;
   cursor: pointer;
   border: none;
   align-self: end;
-  margin: 20px 0;
+  margin: ${(props) => props.m || "20px 0"};
   width: 100%;
   &:disabled {
     background-color: ${colorRes}55;
@@ -69,11 +70,11 @@ export const Page = styled.div`
   flex-direction: row-reverse;
 `;
 const active = css`
-background-color: ${colorReq};
+  background-color: ${colorReq};
   color: ${light};
   box-shadow: none;
   border: none;
-`
+`;
 export const ItemPage = styled.button`
   padding: 7px 10px;
   margin: 0 5px;
@@ -84,6 +85,5 @@ export const ItemPage = styled.button`
   border: ${BORDER};
   border-radius: ${RADIUS};
   box-sizing: border-box;
-  ${props => props.active && active};
-  
+  ${(props) => props.active && active};
 `;

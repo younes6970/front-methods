@@ -1,9 +1,15 @@
 import methods from "../../../../confing/methods";
-import {Button, Table, Th, Thead, Tr} from "../../styles/styles";
+import { Button, Table, Th, Thead, Tr } from "../../styles/styles";
 import Image from "next/image";
-import {Div} from "../../../../styles/styles";
+import { Div } from "../../../../styles/styles";
+import Link from "next/link";
+import { useEffect } from "react";
 const BoxList = (props) => {
-  const { lists } = props;
+  const { lists, onDelete } = props;
+  const handleDelete = (id) => {
+    onDelete(id);
+  };
+
   return (
     <Table>
       <Thead>
@@ -25,15 +31,17 @@ const BoxList = (props) => {
               <Th as="td">{methods.convertToPersian(list.code)}</Th>
               <Th as="td">
                 <Div content={"center"} item={"center"}>
-                  <Button>
-                    <Image
-                      src={"/icon/edit.png"}
-                      alt={"edit"}
-                      width={25}
-                      height={25}
-                    />
-                  </Button>
-                  <Button>
+                  <Link href={`/sample/lists/user/${list.id}`}>
+                    <a>
+                      <Image
+                        src={"/icon/edit.png"}
+                        alt={"edit"}
+                        width={25}
+                        height={25}
+                      />
+                    </a>
+                  </Link>
+                  <Button onClick={() => handleDelete(list.id)}>
                     <Image
                       src={"/icon/trash-bin.png"}
                       alt={"edit"}
