@@ -7,7 +7,7 @@ const PostUpdate = () =>{
         url={txtShowMethods.listUrl}
         des={txtShowMethods.listUpdate}
         method={txtShowMethods.proMethod}
-        h={635}
+        h={665}
         isValidation
     >
         <Purple m>body</Purple>

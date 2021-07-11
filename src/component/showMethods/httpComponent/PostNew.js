@@ -10,7 +10,7 @@ const PostNew = () => {
       method={txtShowMethods.proMethod}
       full
       isValidation
-      h={610}
+      h={620}
     >
       <Purple m>body</Purple>
       <Withe m>:</Withe> <Purple m>JSON</Purple>

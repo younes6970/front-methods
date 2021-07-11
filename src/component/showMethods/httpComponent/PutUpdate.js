@@ -7,7 +7,7 @@ const PutUpdate = () =>{
         url={txtShowMethods.listUrl}
         des={txtShowMethods.listUpdatePut}
         method={txtShowMethods.put}
-        h={635}
+        h={655}
         isValidation
     >
         <Purple m>body</Purple>

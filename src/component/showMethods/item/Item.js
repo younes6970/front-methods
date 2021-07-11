@@ -24,14 +24,21 @@ const Item = ({
   full,
   h,
   isValidation,
+  rpvH,
 }) => {
   return (
-    <Box w={full ? "100%" : "48%"} h={h}>
-      <Div dir={"column"} w={"100%"} p={"20px 25px"}>
+    <Box w={full ? "100%" : "48%"} h={h} rpvH={rpvH}>
+      <Div dir={"column"} w={"100%"} p={"10px 15px"}>
         <Copy font={font16}>
           <Http>{method}</Http>:<Http>{url}</Http>
         </Copy>
-        <Div w={"100%"} item={"center"} content={"space-between"} m={"25px 0 0"}>
+        <Div
+          w={"100%"}
+          item={"center"}
+          content={"space-between"}
+          m={"25px 0 0"}
+          resBtn
+        >
           <P m={"0"}>>>> {des}</P>
           {isValidation && <BtnValidation />}
         </Div>
@@ -101,6 +108,9 @@ const Item = ({
   );
 };
 export default Item;
+Item.defaultProps={
+  rpvH : false
+}
 Item.propTypes = {
   url: PropTypes.string.isRequired,
   des: PropTypes.string.isRequired,
@@ -111,4 +121,5 @@ Item.propTypes = {
   full: PropTypes.bool,
   h: PropTypes.number.isRequired,
   isValidation: PropTypes.bool,
+  rpvH:PropTypes.bool
 };

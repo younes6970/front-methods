@@ -6,7 +6,9 @@ import { Div } from "../../../styles/styles";
 import methods from "../../../confing/methods";
 import { useRouter } from "next/router";
 import { ItemPage, Page } from "../styles/styles";
-import {toast} from "react-toastify";
+import { toast } from "react-toastify";
+import Http from "../../ui_component/http/Http";
+import { txtShowMethods } from "../../showMethods/text";
 
 const Lists = () => {
   const {
@@ -39,7 +41,7 @@ const Lists = () => {
     const newValue = [...lists];
     newValue.splice(idx, 1);
     setLists(newValue);
-    toast.success("با موفقیت پاک شد")
+    toast.success("با موفقیت پاک شد");
   };
   useEffect(() => {
     handleQuery();
@@ -47,6 +49,8 @@ const Lists = () => {
   }, []);
   return (
     <Div base dir={"column"} content={"center"} item={"center"}>
+      <Http url={txtShowMethods.listUrlParams} http={txtShowMethods.get} />
+      <Http url={txtShowMethods.listDeleteUrl} http={txtShowMethods.delete} />
       <Div h={"585px"} w={"100%"} m={"30px 0"}>
         {isLoad ? (
           <Loading />

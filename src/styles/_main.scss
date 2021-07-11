@@ -57,3 +57,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
   -moz-appearance: textfield;
 }
+@media screen and (max-width: 1024px) {
+  html {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 414px) {
+  html {
+    font-size: 12px;
+  }
+}

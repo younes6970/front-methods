@@ -9,7 +9,7 @@ const PostPro = () =>{
         method={txtShowMethods.proMethod}
         post
         isValidation
-        h={510}
+        h={520}
     >
         <Purple m>body</Purple>
         <Withe m>:</Withe>

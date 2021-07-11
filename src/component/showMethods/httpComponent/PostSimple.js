@@ -10,7 +10,7 @@ const PostSimple = () => {
       method={txtShowMethods.simpleMethod}
       post
       isValidation
-      h={510}
+      h={520}
     >
       <Purple m>body</Purple>
       <Withe m>:</Withe> <Purple m>JSON</Purple>

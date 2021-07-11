@@ -75,10 +75,11 @@ const UserForm = ({
           m={"0 0 0 10px"}
           onClick={handleBack}
           disabled={isSubmitting}
+          type={"button"}
         >
           برگشت
         </Btn>
-        <Btn m={"0 10px 0 0"} disabled={isSubmitting}>
+        <Btn m={"0 10px 0 0"} disabled={isSubmitting} type={"submit"}>
           ثبت
         </Btn>
       </Div>

@@ -1,8 +1,9 @@
 import Item from "../item/Item";
 import { txtShowMethods } from "../text";
-import { Div } from "../../../styles/styles";
+
 
 const GetUrl = () => {
+
   return (
     <Item
       url={txtShowMethods.listUrlId}
@@ -10,6 +11,7 @@ const GetUrl = () => {
       method={txtShowMethods.get}
       http={txtShowMethods.listHttpId}
       h={510}
+      rpvH
     />
   );
 };

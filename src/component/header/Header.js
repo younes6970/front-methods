@@ -9,7 +9,7 @@ const Header = () => {
   const url = !!pathname.split("/")[1] && pathname.split("/")[1]
   return (
     <HeadBox>
-      <Div ltr base content={"space-between"} item={"center"}>
+      <Div ltr base content={"space-between"} item={"center"} p={"0 10px"}>
         <Div item={"center"}>
           <Link href={"/"}>
             <a className={"link"}>

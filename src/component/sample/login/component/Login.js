@@ -1,6 +1,8 @@
 import LoginFormik from "./LoginForm";
 import { requestPostLogin } from "../../request";
 import { useRouter } from "next/router";
+import Http from "../../../ui_component/http/Http";
+import { txtShowMethods } from "../../../showMethods/text";
 
 const Login = () => {
   const { push } = useRouter();
@@ -20,6 +22,7 @@ const Login = () => {
   };
   return (
     <>
+      <Http url={txtShowMethods.proUrl} http={txtShowMethods.proMethod} />
       <LoginFormik onPost={requestLogin} />
     </>
   );

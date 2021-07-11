@@ -29,13 +29,13 @@ export const Ul = styled.ul`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  li{
+  li {
     list-style: none;
     margin-left: 10px;
-    &:last-child{
+    &:last-child {
       margin-left: 10px;
     }
-    a{
+    a {
       color: ${dark};
       font-size: ${font16};
       text-decoration: none;
@@ -43,12 +43,23 @@ export const Ul = styled.ul`
       transition: all 0.5ms;
       padding: 5px 0 5px 10px;
       border-radius: 20px;
-      &:hover{
+      &:hover {
         color: ${colorRes};
         font-weight: 500;
         transition: all 0.5ms;
       }
     }
+  }
+`;
+const pageResponsive = css`
+  @media screen and (max-width: 992px) {
+    flex-direction: column;
+  }
+`;
+const pageHttpBtn = css`
+  @media screen and (max-width: 415px) {
+    flex-direction: column;
+    align-items: start;
   }
 `;
 export const Div = styled.div`
@@ -64,6 +75,8 @@ export const Div = styled.div`
   box-sizing: border-box;
   ${(props) => props.ltr && "  direction: ltr"};
   ${(props) => props.h && `max-height : ${props.h}`};
+  ${(props) => props.rpvBox && pageResponsive};
+  ${(props) => props.resBtn && pageHttpBtn};
 `;
 Div.propTypes = {
   dir: PropTypes.string,
@@ -75,8 +88,14 @@ Div.propTypes = {
   m: PropTypes.string,
   p: PropTypes.string,
   ltr: PropTypes.string,
-  h:PropTypes.string
+  h: PropTypes.string,
+  rpvBox: PropTypes.bool,
 };
+const rpvHeight = css`
+  @media screen and (max-width: 415px) {
+  height: 450px;
+  }
+`
 export const Box = styled(Div)`
   border: ${BORDER};
   border-radius: ${RADIUS};
@@ -86,9 +105,15 @@ export const Box = styled(Div)`
   flex-direction: column;
   justify-content: space-between;
   height: ${(props) => props.h}px;
+  ${props => props.rpvH && rpvHeight};
+  @media screen and (max-width: 992px) {
+    width: 100%;
+    margin-bottom: 15px;
+  }
 `;
 Box.propTypes = {
   h: PropTypes.number.isRequired,
+  rpvH: PropTypes.bool
 };
 export const H = styled.h1`
   font-size: ${(props) => props.font || `${font20}`};
