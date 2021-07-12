@@ -3,7 +3,6 @@ import {Text} from "../../../../styles/styles";
 import { colorRes} from "../../../../styles/color/js/color";
 
 const Filed = ({ item }) => {
-  console.log(item);
   return (
     <Text>
       filed(<Text color={colorRes}>{item}</Text>)

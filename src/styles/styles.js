@@ -62,6 +62,25 @@ const pageHttpBtn = css`
     align-items: start;
   }
 `;
+const boxValidation = css`
+  @media screen and (max-width: 1024px) {
+    margin: 0 10px;
+    padding: 10px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 6px;
+  }
+  @media screen and (max-width: 609px) {
+    margin: 0 0 10px 0;
+    width: 94%;
+  }
+`;
+const parentValidation = css`
+  @media screen and (max-width: 609px) {
+    margin: 0;
+    flex-direction: column;
+  }
+`;
 export const Div = styled.div`
   display: flex;
   flex-direction: ${(props) => props.dir || "row"};
@@ -77,6 +96,8 @@ export const Div = styled.div`
   ${(props) => props.h && `max-height : ${props.h}`};
   ${(props) => props.rpvBox && pageResponsive};
   ${(props) => props.resBtn && pageHttpBtn};
+  ${(props) => props.isValidation && boxValidation};
+  ${(props) => props.isParentVali && parentValidation}
 `;
 Div.propTypes = {
   dir: PropTypes.string,
@@ -90,12 +111,14 @@ Div.propTypes = {
   ltr: PropTypes.string,
   h: PropTypes.string,
   rpvBox: PropTypes.bool,
+  isValidation: PropTypes.bool,
+  isParentVali: PropTypes.bool,
 };
 const rpvHeight = css`
   @media screen and (max-width: 415px) {
-  height: 450px;
+    height: 450px;
   }
-`
+`;
 export const Box = styled(Div)`
   border: ${BORDER};
   border-radius: ${RADIUS};
@@ -105,7 +128,7 @@ export const Box = styled(Div)`
   flex-direction: column;
   justify-content: space-between;
   height: ${(props) => props.h}px;
-  ${props => props.rpvH && rpvHeight};
+  ${(props) => props.rpvH && rpvHeight};
   @media screen and (max-width: 992px) {
     width: 100%;
     margin-bottom: 15px;
@@ -113,7 +136,7 @@ export const Box = styled(Div)`
 `;
 Box.propTypes = {
   h: PropTypes.number.isRequired,
-  rpvH: PropTypes.bool
+  rpvH: PropTypes.bool,
 };
 export const H = styled.h1`
   font-size: ${(props) => props.font || `${font20}`};
@@ -135,7 +158,11 @@ SVG.propTypes = {
   w: PropTypes.number.isRequired,
   h: PropTypes.number.isRequired,
 };
-
+const pRvp = css`
+  @media screen and (max-width: 480px) {
+    margin: 0 15px 25px;
+  }
+`;
 export const P = styled.p`
   ${(props) => props.w && `width :  ${props.w}`};
   font-size: ${(props) => props.font || font18};
@@ -148,6 +175,7 @@ export const P = styled.p`
   ${(props) => props.span && `display: inline-block`};
   text-align: justify;
   border-radius: ${(props) => `${props.radius}` || null};
+  ${(props) => props.isP && pRvp};
 `;
 P.proptypes = {
   w: PropTypes.string,
@@ -159,6 +187,7 @@ P.proptypes = {
   span: PropTypes.bool,
   bg: PropTypes.string,
   radius: PropTypes.number,
+  isP: PropTypes.bool,
 };
 export const Copy = styled(P)`
   background-color: ${colorCopy};
@@ -207,10 +236,19 @@ export const Purple = styled(Code)`
 export const Blue = styled(Code)`
   color: #6897bb;
 `;
+const textRpv = css`
+  @media screen and (max-width: 480px) {
+    word-break: break-all;
+    text-align: justify;
+  }
+`;
 export const Text = styled.span`
   color: ${(props) => props.color || dark};
   font-size: ${font16};
+  direction: ltr;
+  ${(props) => props.isText && textRpv};
 `;
 Text.propTypes = {
   color: PropTypes.string,
+  isText: PropTypes.bool,
 };
